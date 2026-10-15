@@ -1,0 +1,6 @@
+SELECT nome_candidato, 
+       nota_prova,
+       RANK() OVER ( ORDER BY nota_prova DESC ) AS rank_compulo,
+       DENSE_RANK() OVER ( ORDER BY nota_prova DESC ) AS rank_sempulo
+FROM CONCURSO_PUBLICO
+ORDER BY nota_prova DESC;
